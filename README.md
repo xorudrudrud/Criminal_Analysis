@@ -1,6 +1,8 @@
 # Criminal_Analysis
 
 
+
+
 ``` python
 import csv
 f = open(r"C:\Users\a14\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
@@ -64,5 +66,13 @@ ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
 plt.xticks(x,day)
 plt.legend()
 plt.show()
+```
+
+![요일별](https://user-images.githubusercontent.com/113042318/219282384-24e0ced7-8a65-419e-9b70-f591dd3ac111.png)
+
+``` python
+
+
+
 ```
 
