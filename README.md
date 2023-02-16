@@ -65,3 +65,4 @@ plt.xticks(x,day)
 plt.legend()
 plt.show()
 ```
+
