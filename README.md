@@ -1,7 +1,8 @@
 # Criminal_Analysis
 
 
-``` import csv
+``` python
+import csv
 f = open(r"C:\Users\a14\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
 data = csv.reader(f)
 sal = []
