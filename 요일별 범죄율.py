@@ -1,5 +1,5 @@
 import csv
-f = open(r"C:\Users\a14\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
+f = open(r"C:\Users\a22\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
 data = csv.reader(f)
 sal = []
 sung = []
@@ -43,14 +43,16 @@ ax2.set_ylim(0,800)
 
 ax1.spines['bottom'].set_visible(False)
 ax2.spines['top'].set_visible(False)
-ax1.xaxis.tick_top()
-# ax1.xaxis.tick_bottom()
+# ax1.xaxis.tick_top()
+ax1.get_xaxis().set_visible(False) 
+# ax1.xaxis.tick_bottom())
+
 
 kwargs = dict(marker=[(-1, -0.5), (1, 0.5)], markersize=12,
               linestyle="none", color='k', mec='k', mew=1, clip_on=False)
 ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
 ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
-# ax1.tick_params(labeltop=False)
+ax1.tick_params(labeltop=False)
 # plt.xlabel('Day')
 # plt.ylabel('Count')
 # plt.title('요일별 범죄 건수')
