@@ -6,7 +6,7 @@
         <ul>
             <li>강력 범죄의 유형을 파악해 사전 조치</li>
             <li>지역 치안 유지 자원 효율적 분배</li>
-            <li>범죄 예방 교육 예산안 편성</li>
+            <li>범죄 예방 교육 및 예산안 편성</li>
         </ul>
     </li>
 </ul>
@@ -15,75 +15,12 @@
 <hr></hr>
 <h1>요일별 범죄율</h1>
 
-``` python
-import csv
-f = open(r"C:\Users\a22\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
-data = csv.reader(f)
-sal = []
-sung = []
-ma = []
-day = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
-for i in data:
-    if '살인' in i[0]:
-        for x in i[1:]:
-            sal.append(int(x))
-    if '성폭력' in i[0]:
-        for j in i[1:]:
-            sung.append(int(j))
-    if '마약' in i[0]:
-        for z in i[1:]:
-            ma.append(int(z))
-#         print(sal)
-#         print(sung)
-#         print(ma)
-import matplotlib.pyplot as plt
-from matplotlib import font_manager, rc
-import numpy as np
-font_path = "C:\Windows\Fonts\H2GTRM.TTF"
-font = font_manager.FontProperties(fname=font_path).get_name()
-rc("font", family = font)
-
-x = np.arange(0,7)
-fig,(ax1,ax2) = plt.subplots(2,1)
-fig.subplots_adjust(hspace=0.1)
-
-ax1.plot(x,sal, label = '살인', color = 'red')
-ax1.plot(x,sung, label = '성폭력', color = 'orange')
-ax1.plot(x,ma, label = '마약', color = 'blue')
-
-ax2.plot(x,sal, label = '살인', color = 'red')
-ax2.plot(x,sung, label = '성폭력', color = 'orange')
-ax2.plot(x,ma, label = '마약', color = 'blue')
-
-
-ax1.set_ylim(3000,6000)
-ax2.set_ylim(0,800)
-
-ax1.spines['bottom'].set_visible(False)
-ax2.spines['top'].set_visible(False)
-# ax1.xaxis.tick_top()
-ax1.get_xaxis().set_visible(False) 
-# ax1.xaxis.tick_bottom())
-
-
-kwargs = dict(marker=[(-1, -0.5), (1, 0.5)], markersize=12,
-              linestyle="none", color='k', mec='k', mew=1, clip_on=False)
-ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
-ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
-ax1.tick_params(labeltop=False)
-# plt.xlabel('Day')
-# plt.ylabel('Count')
-# plt.title('요일별 범죄 건수')
-# plt.plot(sal, label = '살인', color = 'red')
-# plt.plot(sung, label = '성폭력', color = 'orange')
-# plt.plot(ma, label = '마약', color = 'blue')
-plt.xticks(x,day)
-plt.legend()
-plt.show()
-```
 
 ![요일별](https://user-images.githubusercontent.com/113042318/219282384-24e0ced7-8a65-419e-9b70-f591dd3ac111.png)
 
+![학력별](https://user-images.githubusercontent.com/113042318/219283606-21e351b4-038e-41d4-97e4-6e65fde68a91.PNG)
+
+![직업별](https://user-images.githubusercontent.com/113042318/219282989-7bb4a09b-6820-4d2a-abcc-69499d2bc0b1.png)
 
 
 <hr></hr>
@@ -129,7 +66,7 @@ plt.show()
 
 ```
 
-![직업별](https://user-images.githubusercontent.com/113042318/219282989-7bb4a09b-6820-4d2a-abcc-69499d2bc0b1.png)
+
 
 
 <hr></hr>
@@ -218,4 +155,76 @@ plt.legend()
 plt.show()
 
 ```
-![학력별](https://user-images.githubusercontent.com/113042318/219283606-21e351b4-038e-41d4-97e4-6e65fde68a91.PNG)
+
+<hr></hr>
+
+<h1>요일별 범죄율</h1>
+
+``` python
+import csv
+f = open(r"C:\Users\a22\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
+data = csv.reader(f)
+sal = []
+sung = []
+ma = []
+day = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+for i in data:
+    if '살인' in i[0]:
+        for x in i[1:]:
+            sal.append(int(x))
+    if '성폭력' in i[0]:
+        for j in i[1:]:
+            sung.append(int(j))
+    if '마약' in i[0]:
+        for z in i[1:]:
+            ma.append(int(z))
+#         print(sal)
+#         print(sung)
+#         print(ma)
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+import numpy as np
+font_path = "C:\Windows\Fonts\H2GTRM.TTF"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc("font", family = font)
+
+x = np.arange(0,7)
+fig,(ax1,ax2) = plt.subplots(2,1)
+fig.subplots_adjust(hspace=0.1)
+
+ax1.plot(x,sal, label = '살인', color = 'red')
+ax1.plot(x,sung, label = '성폭력', color = 'orange')
+ax1.plot(x,ma, label = '마약', color = 'blue')
+
+ax2.plot(x,sal, label = '살인', color = 'red')
+ax2.plot(x,sung, label = '성폭력', color = 'orange')
+ax2.plot(x,ma, label = '마약', color = 'blue')
+
+
+ax1.set_ylim(3000,6000)
+ax2.set_ylim(0,800)
+
+ax1.spines['bottom'].set_visible(False)
+ax2.spines['top'].set_visible(False)
+# ax1.xaxis.tick_top()
+ax1.get_xaxis().set_visible(False) 
+# ax1.xaxis.tick_bottom())
+
+
+kwargs = dict(marker=[(-1, -0.5), (1, 0.5)], markersize=12,
+              linestyle="none", color='k', mec='k', mew=1, clip_on=False)
+ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
+ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
+ax1.tick_params(labeltop=False)
+# plt.xlabel('Day')
+# plt.ylabel('Count')
+# plt.title('요일별 범죄 건수')
+# plt.plot(sal, label = '살인', color = 'red')
+# plt.plot(sung, label = '성폭력', color = 'orange')
+# plt.plot(ma, label = '마약', color = 'blue')
+plt.xticks(x,day)
+plt.legend()
+plt.show()
+```
+
+<hr></hr>
