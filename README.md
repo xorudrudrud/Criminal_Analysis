@@ -1,5 +1,14 @@
 # Criminal_Analysis
 
+<hr></hr>
+<ul>
+    <li>조사의 목적
+        <ul>
+            <li>강력 범죄의 유형을 파악해 사전 조치</li>
+            <li></li>
+        </ul>
+    </li>
+</ul>
 
 
 <hr></hr>
