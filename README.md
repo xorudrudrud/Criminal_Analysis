@@ -15,7 +15,8 @@
 <hr></hr>
 <h1>요일별 범죄율</h1>
 
-![요일별](https://user-images.githubusercontent.com/113042318/219282384-24e0ced7-8a65-419e-9b70-f591dd3ac111.png)
+![요일별1](https://user-images.githubusercontent.com/113042318/219307680-7635130d-47f3-4bfa-855a-569d425e0b38.png)
+
 
 <p>휴일이 시작되는 금요일, 토요일, 일요일에 성폭력 범죄가 증가하니 주의가 필요해보인다.</p>
 
