@@ -2,7 +2,7 @@
 
 
 
-
+<hr></hr>
 ``` python
 import csv
 f = open(r"C:\Users\a22\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
