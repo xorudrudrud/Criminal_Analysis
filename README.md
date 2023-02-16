@@ -75,7 +75,7 @@ plt.show()
 
 
 
-
+<hr></hr>
 
 직업별
 ``` python
@@ -120,7 +120,7 @@ plt.show()
 ![직업별](https://user-images.githubusercontent.com/113042318/219282989-7bb4a09b-6820-4d2a-abcc-69499d2bc0b1.png)
 
 
-
+<hr></hr>
 
 ``` python
 import matplotlib.pyplot as plt
