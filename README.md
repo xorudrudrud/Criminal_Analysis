@@ -78,6 +78,7 @@ plt.show()
 <hr></hr>
 
 <h1>직업별</h1>
+
 ``` python
 import csv
 f = open("C:\\Users\\a13\\Desktop\\web\\day33\\범죄자_직업_2019.csv",encoding='euc-kr')
@@ -122,7 +123,8 @@ plt.show()
 
 <hr></hr>
 
-<h1></h1>
+<h1>학력별</h1>
+
 ``` python
 import matplotlib.pyplot as plt
 import numpy as np
