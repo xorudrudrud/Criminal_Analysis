@@ -14,14 +14,19 @@
 
 <hr></hr>
 <h1>요일별 범죄율</h1>
+
 ![요일별](https://user-images.githubusercontent.com/113042318/219282384-24e0ced7-8a65-419e-9b70-f591dd3ac111.png)
 
 <hr></hr>
+
 <h1>학력별 범죄율</h1>
+
 ![학력별](https://user-images.githubusercontent.com/113042318/219283606-21e351b4-038e-41d4-97e4-6e65fde68a91.PNG)
 
 <hr></hr>
+
 <h1>직업별 범죄율</h1>
+
 ![직업별](https://user-images.githubusercontent.com/113042318/219282989-7bb4a09b-6820-4d2a-abcc-69499d2bc0b1.png)
 
 
