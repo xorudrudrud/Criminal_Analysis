@@ -1,53 +1,66 @@
 # Criminal_Analysis
 
 
-``` python
-import csv 
-a = [[],[],[],[],[],[],[]] #보라색 7개 - 요일, 1개당 24시간
-
-with open(r"C:\Users\a22\Desktop\Python\passby_data.CSV", 'r', encoding="utf-8") as f:
-    reader = csv.DictReader(f)
-    j = 0
-    i = 0
-    for row in reader:
-        a[i].append(row)
-        # print("\n\n==================================",a)
-        j=j+1
-        if(j % 24 == 0):
-            i=i+1
-            # print("\n------요일바뀜------\n", a[i])
-
-# 시간대별 주간 평균값 구하기
-avgh, avghw, avghy = [], [], []
-
-for j in range(0,24):
-    day_sum = 0
-    day_wsum = 0
-    day_ysum = 0
-
-    for i in range(0,7):
-        day_sum = day_sum + int(a[i][j]['num']) # i번째 요일에 j번째 시간대 행인수
-        day_wsum = day_wsum + int(a[i][j]['wnum']) # i번째 요일에 j번째 시간대 여성수
-        day_ysum = day_ysum + int(a[i][j]['ynum']) # i번째 요일에 j번째 시간대 30대 행인 수
-
-    avgh.append(day_sum/7) #j번째 시간대 주간 행인수 평균
-    avghw.append(day_wsum/7) #j번째 시간대 주간 여성 행인 수 평균
-    avghy.append(day_ysum/7) #j번째 시간대 주간 30대 행인 수 평균
-
-# 시간대별 평균 유동인구 출력하기
-day_title = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
-hour_title = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
-
+``` import csv
+f = open(r"C:\Users\a14\Downloads\범죄발생_요일_2019.csv",encoding='euc-kr')
+data = csv.reader(f)
+sal = []
+sung = []
+ma = []
+day = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+for i in data:
+    if '살인' in i[0]:
+        for x in i[1:]:
+            sal.append(int(x))
+    if '성폭력' in i[0]:
+        for j in i[1:]:
+            sung.append(int(j))
+    if '마약' in i[0]:
+        for z in i[1:]:
+            ma.append(int(z))
+#         print(sal)
+#         print(sung)
+#         print(ma)
 import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+import numpy as np
+font_path = "C:\Windows\Fonts\H2GTRM.TTF"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc("font", family = font)
 
-plt.title("Hourly passerby data")
-plt.xlabel("Hour")
-plt.ylabel("Number of passerby")
+x = np.arange(0,7)
+fig,(ax1,ax2) = plt.subplots(2,1)
+fig.subplots_adjust(hspace=0.1)
 
-plt.plot(hour_title, avghw, c="green", label = "Woman")
-plt.plot(hour_title, avghy, c="red", label = "Young")
-plt.plot(hour_title, avgh, label = "Hourly")
-plt.scatter(hour_title, avgh)
+ax1.plot(x,sal, label = '살인', color = 'red')
+ax1.plot(x,sung, label = '성폭력', color = 'orange')
+ax1.plot(x,ma, label = '마약', color = 'blue')
+
+ax2.plot(x,sal, label = '살인', color = 'red')
+ax2.plot(x,sung, label = '성폭력', color = 'orange')
+ax2.plot(x,ma, label = '마약', color = 'blue')
+
+
+ax1.set_ylim(3000,6000)
+ax2.set_ylim(0,800)
+
+ax1.spines['bottom'].set_visible(False)
+ax2.spines['top'].set_visible(False)
+ax1.xaxis.tick_top()
+# ax1.xaxis.tick_bottom()
+
+kwargs = dict(marker=[(-1, -0.5), (1, 0.5)], markersize=12,
+              linestyle="none", color='k', mec='k', mew=1, clip_on=False)
+ax1.plot([0, 1], [0, 0], transform=ax1.transAxes, **kwargs)
+ax2.plot([0, 1], [1, 1], transform=ax2.transAxes, **kwargs)
+# ax1.tick_params(labeltop=False)
+# plt.xlabel('Day')
+# plt.ylabel('Count')
+# plt.title('요일별 범죄 건수')
+# plt.plot(sal, label = '살인', color = 'red')
+# plt.plot(sung, label = '성폭력', color = 'orange')
+# plt.plot(ma, label = '마약', color = 'blue')
+plt.xticks(x,day)
 plt.legend()
 plt.show()
 ```
