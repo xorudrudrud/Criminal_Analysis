@@ -3,6 +3,7 @@
 
 
 <hr></hr>
+<h1>요일별 범죄율</h1>
 
 ``` python
 import csv
@@ -77,7 +78,7 @@ plt.show()
 
 <hr></hr>
 
-<h1>직업별</h1>
+<h1>직업별 범죄율</h1>
 
 ``` python
 import csv
@@ -123,7 +124,7 @@ plt.show()
 
 <hr></hr>
 
-<h1>학력별</h1>
+<h1>학력별 범죄율</h1>
 
 ``` python
 import matplotlib.pyplot as plt
